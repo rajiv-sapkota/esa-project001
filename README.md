@@ -1,16 +1,29 @@
-# React + Vite
+# Retro Terminal on Aliyun ESA 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+_ESA Competition Entry | Retro Cyberpunk Portfolio_
 
-Currently, two official plugins are available:
+## Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a creative submission for the **Aliyun ESA (Edge Security Acceleration) Competition**. It reimagines the personal portfolio as an interactive, CLI-based experience, paying homage to the "hacker" aesthetics of the 90s and early 2000s cyberculture.
 
-## React Compiler
+Deployed on **Aliyun ESA**, this static site leverages edge computing capabilities to deliver a lightning-fast, globally accessible "terminal" to users anywhere in the world.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Design Philosophy: "Digital Nostalgia"
 
-## Expanding the ESLint configuration
+In an era of clean, minimalist, and often sterile UI design, the **Retro Terminal** aims to bring back the feeling of *exploration* and *mystery* that characterized the early internet.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+*   **The "Living" Machine**: The site isn't just a document; it's a simulation. The scanlines, screen curvature, and phosphor glow mimic the physical imperfections of old CRT monitors, making the digital experience feel tangible and "warm."
+*   **Interaction is Key**: Instead of passively scrolling, users must actively "talk" to the system via commands. This gamifies the experience and creates a deeper engagement loop.
+*   **Performance + Aesthetics**: By building with **Vite + React** and deploying to **Aliyun ESA**, we prove that heavy visual stylization (animations, canvas effects) can coexist with modern high-performance infrastructure.
+
+## Key Features
+
+*   📺 **CRT Simulation**: Realistic scanlines, vignette, and screen flicker effects.
+*   ⌨️ **Interactive Terminal**: Fully functional command parser with history navigation.
+*   🌧️ **Matrix Mode**: High-performance Canvas 2D digital rain effect (Type `matrix` or `矩阵Matrix`).
+*   ⚡ **Aliyun ESA Deployed**: Optimized for edge delivery with single-page app routing validation.
+
+## How to Explore
+
+Type `help` to see the available commands.
+(Or since this is a global project, try `关于我`, `项目`, etc.!)
