@@ -11,6 +11,7 @@ export const commands = {
                     <li>- <span style={{ color: '#fff' }}>contact</span>: Get in touch</li>
                     <li>- <span style={{ color: '#fff' }}>why</span>: Design philosophy</li>
                     <li>- <span style={{ color: '#fff' }}>gui</span>: Graphical User Interface?</li>
+                    <li>- <span style={{ color: '#fff' }}>tongyi</span>: Chat with AI (API Key required)</li>
                     <li>- <span style={{ color: '#fff' }}>matrix</span>: Toggle The Matrix</li>
                     <li>- <span style={{ color: '#fff' }}>clear</span>: Clear the screen</li>
                 </ul>

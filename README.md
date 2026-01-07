@@ -22,6 +22,7 @@ In an era of clean, minimalist, and often sterile UI design, the **Retro Termina
 *   📺 **CRT Simulation**: Realistic scanlines, vignette, and screen flicker effects.
 *   ⌨️ **Interactive Terminal**: Fully functional command parser with history navigation.
 *   🌧️ **Matrix Mode**: High-performance Canvas 2D digital rain effect (Type `matrix` or `矩阵Matrix`).
+*   🤖 **Tongyi AI Chat**: Native integration with Qwen-Turbo. Type `tongyi` to start a session.
 *   ⚡ **Aliyun ESA Deployed**: Optimized for edge delivery with single-page app routing validation.
 
 ## How to Explore

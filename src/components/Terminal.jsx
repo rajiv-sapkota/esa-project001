@@ -2,11 +2,17 @@ import React, { useState, useEffect, useRef } from 'react';
 import { commands } from '../utils/commands';
 import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
+import { sendMessageToTongyi } from '../utils/tongyi';
 
 import MatrixRain from './MatrixRain';
 import CRTWrapper from './CRTWrapper';
 
 const Terminal = () => {
+    // Modes: 'default', 'tongyi_auth', 'tongyi_chat'
+    const [terminalMode, setTerminalMode] = useState('default');
+    const [apiKey, setApiKey] = useState('');
+    const [chatHistory, setChatHistory] = useState([]);
+
     const [showMatrix, setShowMatrix] = useState(false);
     const [history, setHistory] = useState([
         {
@@ -31,7 +37,69 @@ const Terminal = () => {
         }
     }, [history]);
 
+    const handleTongyiChat = async (input) => {
+        const userMsg = input.trim();
+        if (userMsg.toLowerCase() === 'exit') {
+            setTerminalMode('default');
+            setHistory(prev => [...prev, {
+                id: uuidv4(),
+                type: 'output',
+                content: 'Exited Tongyi Chat. Back to local terminal.'
+            }]);
+            return;
+        }
+
+        // 1. Show User Input
+        const inputEntry = { id: uuidv4(), type: 'input', content: `[Me]: ${userMsg}` };
+        setHistory(prev => [...prev, inputEntry]);
+
+        // 2. Prepare API Payload
+        const newHistory = [...chatHistory, { role: 'user', content: userMsg }];
+
+        // 3. Show Loading
+        const loadingId = uuidv4();
+        setHistory(prev => [...prev, { id: loadingId, type: 'output', content: 'Tongyi is thinking...' }]);
+
+        // 4. Call API
+        const response = await sendMessageToTongyi(apiKey, newHistory);
+
+        // 5. Update History (Remove loading, add response)
+        setHistory(prev => {
+            const filtered = prev.filter(item => item.id !== loadingId);
+            return [...filtered, {
+                id: uuidv4(),
+                type: 'output',
+                content: <span style={{ color: '#00ccff' }}>[Tongyi]: {response}</span>
+            }];
+        });
+
+        setChatHistory([...newHistory, { role: 'assistant', content: response }]);
+    };
+
     const handleCommand = (cmd) => {
+        // Special Input Handling for Chat Modes
+        if (terminalMode === 'tongyi_auth') {
+            if (cmd.trim() === '') return;
+
+            setApiKey(cmd.trim());
+            setTerminalMode('tongyi_chat');
+            setHistory(prev => [...prev, {
+                id: uuidv4(),
+                type: 'input',
+                content: 'REDACTED_API_KEY'
+            }, {
+                id: uuidv4(),
+                type: 'output',
+                content: 'API Key stored using session memory. You may now speak to Tongyi. Type "exit" to leave.'
+            }]);
+            return;
+        }
+
+        if (terminalMode === 'tongyi_chat') {
+            handleTongyiChat(cmd);
+            return;
+        }
+
         const trimmedCmd = cmd.trim().toLowerCase();
 
         // Add User Input to History
@@ -56,6 +124,22 @@ const Terminal = () => {
                 id: uuidv4(),
                 type: 'output',
                 content: !showMatrix ? 'The Matrix has you...' : 'Disconnected.'
+            }]);
+            return;
+        }
+
+        // Handle Tongyi Command
+        if (trimmedCmd === 'tongyi') {
+            setTerminalMode('tongyi_auth');
+            setHistory([...baseHistory, {
+                id: uuidv4(),
+                type: 'output',
+                content: (
+                    <div>
+                        <p>Initializing Secure Uplink to DashScope (Tongyi Qianwen)...</p>
+                        <p style={{ color: 'yellow' }}>Please enter your DashScope API Key:</p>
+                    </div>
+                )
             }]);
             return;
         }
@@ -121,10 +205,13 @@ const Terminal = () => {
                 ))}
 
                 <form onSubmit={handleSubmit} className="input-line">
-                    <span className="prompt">{'>'} </span>
+                    <span className="prompt">
+                        {terminalMode === 'tongyi_auth' ? 'Key: ' :
+                            terminalMode === 'tongyi_chat' ? 'Chat: ' : '> '}
+                    </span>
                     <input
                         ref={inputRef}
-                        type="text"
+                        type={terminalMode === 'tongyi_auth' ? "password" : "text"}
                         value={inputVal}
                         onChange={(e) => setInputVal(e.target.value)}
                         autoFocus
