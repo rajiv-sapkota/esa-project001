@@ -6,13 +6,13 @@ export const commands = {
             <div>
                 <p>Available commands:</p>
                 <ul style={{ listStyleType: 'none', paddingLeft: '1rem' }}>
-                    <li>- <span style={{ color: '#fff' }}>about</span>: Who am I?</li>
-                    <li>- <span style={{ color: '#fff' }}>projects</span>: Show off my work</li>
-                    <li>- <span style={{ color: '#fff' }}>contact</span>: Get in touch</li>
-                    <li>- <span style={{ color: '#fff' }}>why</span>: Design philosophy</li>
-                    <li>- <span style={{ color: '#fff' }}>gui</span>: Graphical User Interface?</li>
-                    <li>- <span style={{ color: '#fff' }}>matrix</span>: Toggle The Matrix</li>
-                    <li>- <span style={{ color: '#fff' }}>clear</span>: Clear the screen</li>
+                    <li>- <span style={{ color: '#fff' }}>关于我</span>: Who am I?</li>
+                    <li>- <span style={{ color: '#fff' }}>项目</span>: Show off my work</li>
+                    <li>- <span style={{ color: '#fff' }}>联系方式</span>: Get in touch</li>
+                    <li>- <span style={{ color: '#fff' }}>为什么我创建这个项目</span>: Design philosophy</li>
+                    <li>- <span style={{ color: '#fff' }}>界面</span>: Graphical User Interface?</li>
+                    <li>- <span style={{ color: '#fff' }}>矩阵Matrix</span>: Toggle The Matrix</li>
+                    <li>- <span style={{ color: '#fff' }}>清楚记忆</span>: Clear the screen</li>
                 </ul>
             </div>
         )
