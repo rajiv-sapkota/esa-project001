@@ -1,7 +1,9 @@
 {
-    "feature_flags": {
-        "assets": "dist",
-        "build": "npm run build"
+    "build": {
+        "command": "npm run build"
+    },
+    "assets": {
+        "directory": "dist"
     },
     "routes": [
         {
